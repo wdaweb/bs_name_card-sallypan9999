@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap-5.1.3-dist/css/bootstrap.css">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bg-magic {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(./images/dream.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .triangle {
+      position: relative;
+      background-color: plum;
+    }
+
+    .triangle::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 70px solid plum;
+      border-right: 70px solid plum;
+      border-left: 70px solid transparent;
+      border-bottom: 70px solid transparent;
+      filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.2));
+      z-index: 1;
+      visibility: hidden;
+    }
+
+    .triangle::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-top: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-left: 80px solid plum;
+      border-bottom: 80px solid plum;
+      filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.2));
+      z-index: 1;
+      visibility: hidden;
+    }
+
+    @media(min-width:768px) {
+      .triangle::before {
+        content: "";
+        visibility: visible;
+      }
+
+      .triangle::after {
+        content: "";
+        visibility: visible;
+      }
+    }
+
+    .row {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container triangle p-2 p-md-5">
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-sm-12 col-md-4">
+          <img src="./images/木之本櫻.jpg" class="w-100 h-100 rounded-start" alt="木之本櫻">
+        </div>
+        <div class="col-sm-12 col-md-8 bg-magic">
+          <div class="card-body px-5 ps-md-12">
+            <p class="lead fs-1">《庫洛魔法使》</p>
+            <h1 class="display-3">木之本櫻</h1>
+            <ul class="list-unstyled fs-4">
+              <li>生日：4月1日</li>
+              <li>星座：牡羊座</li>
+              <li>血型：A型</li>
+              <li>喜歡的花：櫻花</li>
+              <li>使用魔力：
+                <ul>
+                  <li>黑暗力量（庫洛·里德魔力）</li>
+                  <li>星星力量（小櫻自身魔力）</li>
+                  <li>夢之力量 (小櫻成長後的新魔力)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <figure class="text-center">
+              <blockquote class="blockquote">
+                <p>隱藏著夢之力量的鑰匙啊，在我面前顯示你真正的力量，跟你定下約定的小櫻命令你，release</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                Someone famous in <cite title="Source Title">Sakura Avalon</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
